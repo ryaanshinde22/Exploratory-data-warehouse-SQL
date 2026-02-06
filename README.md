@@ -2,6 +2,8 @@
 Built a SQL based Data Warehouse using the Bronze–Silver–Gold architecture. Performed data cleaning, transformation, and Exploratory Data Analysis (EDA) to generate business-ready insights using advanced SQL queries.
 # Data Warehouse & Analytics Project
 
+# Data Warehouse & Analytics Project
+
 ## Overview
 
 This repository contains an **end-to-end Data Warehouse and Analytics project** developed to understand and apply modern data engineering and analytics concepts in a practical way. The project focuses on designing a structured data warehouse, implementing ETL pipelines, and enabling analytical reporting using clean, well-modeled data.
@@ -10,103 +12,70 @@ The solution is based on the **Medallion Architecture (Bronze, Silver, Gold)** a
 
 ---
 
-## 🏗️ Data Architecture
+## 🚀 Project Requirements
 
-The data platform follows the **Medallion Architecture**, which separates data into logical layers to improve data quality, maintainability, and analytical usability.
+### Building the Data Warehouse (Data Engineering)
 
-![Data Architecture](docs/data_architecture.png)
+#### Objective
 
-### 🔹 Bronze Layer — Raw Data
+Design and implement a **modern data warehouse using SQL Server** to consolidate sales data from multiple source systems and prepare it for analytical reporting.
 
-* Stores **raw data exactly as received** from source systems
-* Source format: **CSV files**
-* Data ingested into **SQL Server** without transformation
-* Serves as a historical record and reprocessing source
+#### Specifications
 
-### 🔹 Silver Layer — Cleaned & Standardized Data
-
-* Focuses on **data cleansing and transformation**
-* Includes:
-
-  * Data type standardization
-  * Handling missing or invalid values
-  * Removing duplicates
-  * Applying consistent naming conventions
-* Produces reliable datasets ready for analytical modeling
-
-### 🔹 Gold Layer — Analytics-Ready Data
-
-* Contains **business-level, analytics-ready datasets**
-* Data modeled using a **Star Schema**
-* Includes fact and dimension tables designed for:
-
-  * Aggregations
-  * Trend analysis
-  * Reporting and dashboards
+* **Data Sources**: Ingest data from two operational systems—**ERP** and **CRM**—provided as CSV files.
+* **Data Quality**: Identify, clean, and resolve data quality issues (missing values, duplicates, inconsistencies) before analysis.
+* **Integration**: Integrate both source systems into a **single, consistent analytical data model** optimized for querying and reporting.
+* **Scope**: Work only with the **latest available dataset**; historization and slowly changing dimensions are out of scope.
+* **Documentation**: Maintain clear and structured documentation of the data architecture and data models to support both business users and analytics teams.
 
 ---
 
-## 📖 Project Components
+### BI: Analytics & Reporting (Data Analysis)
 
-### 1️⃣ Data Architecture Design
+#### Objective
 
-* Designed a layered data warehouse using Medallion Architecture principles
-* Clearly separated raw, refined, and analytics-ready data
-* Focused on clarity, scalability, and ease of analysis
+Develop **SQL-based analytical queries** to generate insights related to:
 
-### 2️⃣ ETL Pipelines
+* **Customer Behavior**
+* **Product Performance**
+* **Sales Trends**
 
-* Implemented ETL workflows to move data across Bronze → Silver → Gold layers
-* Applied transformation logic using **SQL Server**
-* Ensured data consistency and correctness at each stage
+The resulting metrics and summaries are intended to support data-driven understanding of business performance.
 
-### 3️⃣ Data Modeling
-
-* Built **fact and dimension tables** following dimensional modeling concepts
-* Optimized schema structure for analytical queries
-* Enabled efficient joins and aggregations
-
-### 4️⃣ Analytics & Reporting
-
-* Developed **SQL-based analytical queries**
-* Enabled insight generation such as:
-
-  * Performance trends
-  * Summary metrics
-  * Data-driven observations
-* Structured data for easy integration with BI tools
+For detailed functional and analytical requirements, see: `docs/requirements.md`.
 
 ---
 
-## 🛠️ Tools & Technologies
+## 📂 Repository Structure
 
-* SQL Server
-* SQL (DDL, DML, analytical queries)
-* CSV data sources
-* Dimensional Modeling (Star Schema)
-* Medallion Architecture concepts
+---
+data-warehouse-project/
+│
+├── datasets/                           # Raw source datasets (ERP and CRM CSV files)
+│
+├── docs/                               # Project documentation and design artifacts
+│   ├── etl.drawio                      # ETL techniques, logic, and workflow diagrams
+│   ├── data_architecture.drawio        # Overall data warehouse architecture
+│   ├── data_catalog.md                 # Dataset catalog with field definitions and metadata
+│   ├── data_flow.drawio                # End-to-end data flow diagram
+│   ├── data_models.drawio              # Dimensional data models (star schema)
+│   ├── naming-conventions.md           # Naming standards for tables, columns, and files
+│
+├── scripts/                            # SQL scripts for ETL and transformations
+│   ├── bronze/                         # Raw data extraction and loading scripts
+│   ├── silver/                         # Data cleansing and transformation scripts
+│   ├── gold/                           # Analytics-ready models and views
+│
+├── tests/                              # Data validation and quality check scripts
+│
+├── README.md                           # Project overview and usage instructions
+├── LICENSE                             # License information
+├── .gitignore                          # Git ignore rules
+└── requirements.txt                    # Project dependencies and requirements
+---
 
 ---
 
-## 🎯 Learning Objectives
+## 🛡️ License
 
-This project was created to:
-
-* Practice designing a structured data warehouse
-* Understand data flow across multiple transformation layers
-* Apply data modeling concepts in a real dataset
-* Strengthen SQL skills for analytics and reporting
-
----
-
-## 📌 Possible Enhancements
-
-* Automating pipelines using orchestration tools
-* Adding incremental data loading
-* Implementing data validation and quality checks
-* Connecting BI dashboards (Power BI / Tableau)
-* Extending the solution to a cloud data platform
-
----
-
-This project serves as a **hands-on learning implementation** of modern data warehousing and analytics concepts, emphasizing clarity, structure, and practical understanding.
+This project is licensed under the **MIT License**. You are free to use, modify, and distribute this project with appropriate attribution. The license details can be found in the `LICENSE` file.
