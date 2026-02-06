@@ -48,7 +48,7 @@ For detailed functional and analytical requirements, see: `docs/requirements.md`
 
 ## 📂 Repository Structure
 
----
+```
 data-warehouse-project/
 │
 ├── datasets/                           # Raw source datasets (ERP and CRM CSV files)
@@ -72,7 +72,7 @@ data-warehouse-project/
 ├── LICENSE                             # License information
 ├── .gitignore                          # Git ignore rules
 └── requirements.txt                    # Project dependencies and requirements
----
+```
 
 ---
 
